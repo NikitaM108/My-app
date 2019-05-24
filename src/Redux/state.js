@@ -1,7 +1,8 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_POST = 'ADD_POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 
-
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
 let store = {
 	_state: {
 
@@ -22,8 +23,9 @@ let store = {
 			messagesData: [
 				{ id: 1, message: 'Hello!' },
 				{ id: 2, message: 'Hello!' },
-				{ id: 3, message: 'Hello!' },
-			]
+				{ id: 3, message: 'Hello!' }
+			],
+			newMessageBody: ""
 
 		}
 	},
@@ -55,7 +57,7 @@ let store = {
 		this._rerenderEntireTree = observer;
 	},
 	dispatch(action) {
-		if (action.type === 'ADD-POST') {
+		if (action.type === ADD_POST) {
 			let newPost = {
 				id: 5,
 				message: this._state.profilePage.newPostText,
@@ -65,26 +67,31 @@ let store = {
 			this._state.profilePage.newPostText = '';
 			this._rerenderEntireTree(this._state);
 
-		} else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+		} else if (action.type === UPDATE_NEW_POST_TEXT) {
 
 			this._state.profilePage.newPostText = action.newText;
 			this._rerenderEntireTree(this._state);
 
-
+		} else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+			this._state.dialogsPage.newMessageBody = action.body;
+			this._rerenderEntireTree(this._state);
+		} else if (action.type === SEND_MESSAGE) {
+			let body = this._state.dialogsPage.newMessageBody;
+			this._state.dialogsPage.newMessageBody = '';
+			this._state.dialogsPage.messagesData.push({ id: 4, message: body });
+			this._rerenderEntireTree(this._state);
 		}
 	}
 }
 
-export const addPostActionCreater = () => ({
-		type:'ADD-POST'
-	})
+export const addPostActionCreater = () => ({ type: ADD_POST })
+export const updateNewPostTextActionCreater = (text) => ({
+	type: UPDATE_NEW_POST_TEXT, newText: text
+})
 
+export const sendMessageCreater = () => ({ type: SEND_MESSAGE })
+export const updateNewMessageBodyCreater = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
 
-export const updateNewPostTextActionCreater = (text) =>  ({
-		
-		type:'UPDATE-NEW-POST-TEXT', newText: text
-		
-	})
 
 
 export default store;
