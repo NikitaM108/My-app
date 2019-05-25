@@ -1,8 +1,7 @@
-const ADD_POST = 'ADD_POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
-const SEND_MESSAGE = 'SEND_MESSAGE';
 let store = {
 	_state: {
 
@@ -27,6 +26,9 @@ let store = {
 			],
 			newMessageBody: ""
 
+		},
+		sideBar:{
+			
 		}
 	},
 	getState() {
@@ -57,40 +59,17 @@ let store = {
 		this._rerenderEntireTree = observer;
 	},
 	dispatch(action) {
-		if (action.type === ADD_POST) {
-			let newPost = {
-				id: 5,
-				message: this._state.profilePage.newPostText,
-				likeCount: 0
-			};
-			this._state.profilePage.postData.push(newPost);
-			this._state.profilePage.newPostText = '';
-			this._rerenderEntireTree(this._state);
 
-		} else if (action.type === UPDATE_NEW_POST_TEXT) {
-
-			this._state.profilePage.newPostText = action.newText;
-			this._rerenderEntireTree(this._state);
-
-		} else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-			this._state.dialogsPage.newMessageBody = action.body;
-			this._rerenderEntireTree(this._state);
-		} else if (action.type === SEND_MESSAGE) {
-			let body = this._state.dialogsPage.newMessageBody;
-			this._state.dialogsPage.newMessageBody = '';
-			this._state.dialogsPage.messagesData.push({ id: 4, message: body });
-			this._rerenderEntireTree(this._state);
-		}
+		this._state.profilePage = profileReducer(this._state.profilePage,action);
+		this._state.dialogsPage = dialogsReducer(this._state.dialogsPage,action);
+		this._state.sideBar = sidebarReducer(this._state.sideBar,action);
+		this._rerenderEntireTree(this._state);	
 	}
 }
 
-export const addPostActionCreater = () => ({ type: ADD_POST })
-export const updateNewPostTextActionCreater = (text) => ({
-	type: UPDATE_NEW_POST_TEXT, newText: text
-})
 
-export const sendMessageCreater = () => ({ type: SEND_MESSAGE })
-export const updateNewMessageBodyCreater = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
+
+
 
 
 

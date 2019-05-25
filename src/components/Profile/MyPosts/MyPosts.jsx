@@ -1,7 +1,7 @@
 import React from 'react';
 import a from './MyPosts.module.css';
 import Post from './Post/Post';
-import { updateNewPostTextActionCreater, addPostActionCreater } from '../../../Redux/state';
+import { updateNewPostTextActionCreater, addPostActionCreater } from '../../../Redux/profile-reducer';
 
 
 
