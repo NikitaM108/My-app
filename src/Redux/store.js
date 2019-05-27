@@ -1,6 +1,3 @@
-import profileReducer from "./profile-reducer";
-import dialogsReducer from "./dialogs-reducer";
-import sidebarReducer from "./sidebar-reducer";
 
 let store = {
 	_state: {
@@ -55,7 +52,7 @@ let store = {
 		this._state.profilePage.newPostText = newText;
 		this._rerenderEntireTree(this._state);
 	},
-	call(observer) {
+	subscribe(observer) {
 		this._rerenderEntireTree = observer;
 	},
 	dispatch(action) {
