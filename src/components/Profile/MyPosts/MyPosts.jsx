@@ -1,5 +1,5 @@
 import React from 'react';
-import a from './MyPosts.module.css';
+import a from './MyPosts.module.sass';
 import Post from './Post/Post';
 
 

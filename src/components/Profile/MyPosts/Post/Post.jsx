@@ -1,5 +1,5 @@
 import React from 'react';
-import a from './Post.module.css';
+import a from './Post.module.sass';
 
 const Post = (props) => {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Users.module.css';
+import styles from './Users.module.sass';
 import userPhoto from '../../assets/images/images.png';
 import { NavLink } from "react-router-dom";
 import * as axios from 'axios';
@@ -26,7 +26,7 @@ let Users = (props) => {
 					<div>
 						<NavLink to={'/profile/' + users.id}>
 							<img src={users.photos.small != null ? users.photos : userPhoto} alt="photo"
-								className={styles.ъуъ} />
+								className={styles.avatar} />
 						</NavLink>
 					</div>
 					<div>
