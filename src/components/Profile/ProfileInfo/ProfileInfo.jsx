@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
 		<div>
 
 			<div className="wallpaper">
-				<img className={a.space} src='https://newevolutiondesigns.com/images/freebies/galaxy-wallpaper-29.jpg'></img>
+				<img className={a.space}></img>
 			</div>
 
 			<div className={a.descriptionBlock}>

@@ -7,6 +7,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
+import UserCard from './components/UserCard/UserCard'
 
 
 const App = (props) => {
@@ -17,7 +18,8 @@ const App = (props) => {
 		<div className='app-wrapper'>
 			<HeaderContainer />
 			<Navbar />
-			<div className='app-wrapper-content'>
+			<UserCard />
+			<div className='app-wrapper-content' >
 			
 			
 				<Route path='/dialogs' render={() => <DialogsContainer />} />
