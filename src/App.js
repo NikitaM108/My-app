@@ -7,7 +7,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
-import UserCard from './components/UserCard/UserCard'
+
 
 
 const App = (props) => {
@@ -18,7 +18,6 @@ const App = (props) => {
 		<div className='app-wrapper'>
 			<HeaderContainer />
 			<Navbar />
-			<UserCard />
 			<div className='app-wrapper-content' >
 			
 			

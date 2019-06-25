@@ -26,12 +26,13 @@ const MyPosts = (props) => {
 
 	return <div className={a.postsBlock}>
 		<h3>My posts</h3>
+		<div className={a.border}></div>
 		<div>
 			<div>
-				<textarea onChange={onPostChange} ref={newPostElement} value = {props.newPostText}/>
+				<textarea onChange={onPostChange} ref={newPostElement} value = {props.newPostText} className= {a.inputStyle}/>
 			</div>
 			<div>
-				<button onClick = { onAddPost }>Add post</button>
+				<button onClick = { onAddPost } className={a.button}>Add post</button>
 			</div>
 
 

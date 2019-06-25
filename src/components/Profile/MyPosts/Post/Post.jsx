@@ -6,18 +6,22 @@ const Post = (props) => {
 	return (
 
 		<div className={a.item}>
+			<div className={a.name}>User</div>
 			<img src='https://avatarfiles.alphacoders.com/127/127710.jpg'></img>
-			
-			{props.message}
+			<div className={a.border}></div>
+			<div className={a.message}>
+				{props.message}
+			</div>
+
 			<div>
-				<span>Like</span> {props.likeCount}
+
 			</div>
-		
-			</div>
-			
-	
-			
-			
+
+		</div>
+
+
+
+
 	)
 
 }

@@ -7,9 +7,9 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE';
 let initialState = {
 	postData: [
 		{ id: 1, message: 'Hello!', likeCount: 9 },
-		{ id: 2, message: 'Hello!', likeCount: 20 }
+		{ id: 2, message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', likeCount: 20 },
 	],
-	newPostText: 'ну вот',
+	newPostText: 'I am writing some posts !',
 	profile: null
 };
 

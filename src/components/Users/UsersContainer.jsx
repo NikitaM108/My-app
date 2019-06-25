@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as axios from 'axios';
 import Users from './Users';
 import { follow, unfollow, setCurrentPage, toggleIsFollowingProgress, getUsers } from '../../Redux/users-reducer';
 import Preloader from '../common/Preloader';
-import { usersAPI } from '../../api/api';
 import { withAuthRedirect } from '../hoc/withAuthRedirect';
 import { compose } from 'redux';
 
@@ -54,6 +52,6 @@ export default compose(
 		follow, unfollow, setCurrentPage,
 		toggleIsFollowingProgress, getUsers
 	}),
-	withAuthRedirect
+	// withAuthRedirect
 )(UsersContainer);
 

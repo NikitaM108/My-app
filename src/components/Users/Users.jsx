@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './Users.module.sass';
 import userPhoto from '../../assets/images/images.png';
 import { NavLink } from "react-router-dom";
-import * as axios from 'axios';
-import { usersAPI } from '../../api/api';
 
 let Users = (props) => {
 
@@ -25,7 +23,7 @@ let Users = (props) => {
 				<span>
 					<div>
 						<NavLink to={'/profile/' + users.id}>
-							<img src={users.photos.small != null ? users.photos : userPhoto} alt="photo"
+							<img src={users.photos.small != null ? users.photos.small : userPhoto} alt="photo"
 								className={styles.avatar} />
 						</NavLink>
 					</div>
@@ -46,8 +44,7 @@ let Users = (props) => {
 						<div>{users.status}</div>
 					</span>
 					<span>
-						<div>{"users.location.country"}</div>
-						<div>{"users.location.city"}</div>
+					
 					</span>
 				</span>
 			</div>)
