@@ -25,7 +25,7 @@ const MyPosts = (props) => {
 	}
 
 	return <div className={a.postsBlock}>
-		<h3>My posts</h3>
+		<h3 className={a.title}>My posts</h3>
 		<div className={a.border}></div>
 		<div>
 			<div>
