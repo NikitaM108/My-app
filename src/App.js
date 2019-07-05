@@ -7,6 +7,8 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 
 
@@ -14,6 +16,7 @@ const App = (props) => {
 
 
 	return (
+	<MuiPickersUtilsProvider utils={DateFnsUtils}>
 		
 		<div className='app-wrapper'>
 			<HeaderContainer />
@@ -29,8 +32,9 @@ const App = (props) => {
 
 
 
-
+			
 		</div>
+	</MuiPickersUtilsProvider>
 		);
 }
 
