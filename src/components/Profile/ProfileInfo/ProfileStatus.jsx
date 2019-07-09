@@ -35,37 +35,50 @@ const CssTextField = withStyles({
 class ProfileStatus extends React.Component {
 	classes = useStyles
 	state ={
-		editMode: false
+		editMode: false,
+		status: this.props.status
 	}
-	activateEditMode () {
+	activateEditMode = ()=> {
 		this.setState( {
 			editMode: true
 		});
 	}
 	
-	deactivateEditMode () {
+	deactivateEditMode = () =>{
 		this.setState({
 			editMode: false
 		});
-		
-		
+		this.props.updateStatus(this.state.status);
+	}
+	onStatusChange = (e) => {
+		this.setState({
+			status:	e.currentTarget.value
+		})
+	}
 
+	componentDidUpdate (prevProps, prevState) {
+		if(prevProps.status !== this.props.status) {
+			this.setState({
+				status: this.props.status
+			})
+		}
 	}
 	render() {
+		
 		
 		return (
 			<div>
 				{!this.state.editMode &&
 					<div>
 						<CssTextField className={this.classes.margin} id="custom-css-standard-input" label="Status"
-						 onDoubleClick={this.activateEditMode.bind(this)} value={this.props.status}/>
+						 onClick={this.activateEditMode} value={this.props.status}/>
 						 
 					</div>
 				}
 				{this.state.editMode &&
 					<div>
-							<CssTextField className={this.classes.margin} id="custom-css-standard-input" label="Status" 
-							autoFocus={true} onBlur={this.deactivateEditMode.bind(this)} value={this.props.status} />
+							<CssTextField className={this.classes.margin} id="custom-css-standard-input" label="Status"
+							 onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMode} value={this.state.status} />
 					</div>
 				}
 			</div>

@@ -11,7 +11,8 @@ import ListLinks from './List';
 
 const useStyles = makeStyles(theme => ({
   card: {
-		maxWidth: 385,
+		width: 453,
+
 		
 		
   },

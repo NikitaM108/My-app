@@ -1,7 +1,7 @@
 import React from 'react';
 import a from './ProfileInfo.module.sass';
 import Preloader from '../../common/Preloader';
-import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
 import UserCard from './UserCard';
 import ContactsCard from './ContactsCard';
 
@@ -15,11 +15,14 @@ const ProfileInfo = (props) => {
 	}
 
 	return (
-		<div className={a.page}>
-			<h3 className={a.title}>Profile</h3>
-			<Divider variant="fullwith"/>
-			<UserCard profile={props.profile} />
-			<Divider variant="fullwith" />
+		<div >
+			<div className={a.title}>
+				<Typography variant="h5" gutterBottom >
+				Profile
+      </Typography>
+			</div>
+			
+			<UserCard profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
 			<div className={a.descriptionBlock}>
 				<ContactsCard />
 			</div>

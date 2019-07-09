@@ -11,7 +11,7 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import userPhoto from '../../../assets/images/images.png'
+import userPhoto from '../../../assets/images/avatar.jpg'
 import ProfileStatus from './ProfileStatus';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AccountCircleIcon from'@material-ui/icons/AccountCircle';
@@ -19,11 +19,14 @@ import { teal } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
 	card: {
-		maxWidth: 450,
+		maxWidth: 440,
+		marginLeft: 20,
+		marginTop: 10,
+
 	},
 	media: {
 		height: 0,
-		paddingTop: '56.25%', // 16:9
+		paddingTop: '56.25%',  //16:9
 	},
 	expand: {
 		transform: 'rotate(0deg)',
@@ -87,7 +90,7 @@ const UserCard = (props) => {
 			</CardContent>
 			<CardActions disableSpacing>
 
-				<ProfileStatus status={'Change status here'} />
+				<ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
 
 				<IconButton
 					className={clsx(classes.expand, {
