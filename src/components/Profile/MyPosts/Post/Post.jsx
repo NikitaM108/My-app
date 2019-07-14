@@ -12,7 +12,11 @@ avatar: {
 	backgroundColor: teal[500], 
 	width: 50,
 	height: 50,
+	margin: 10,
+
 },
+
+
 });
 
 const Post = (props) => {
@@ -20,16 +24,16 @@ const Post = (props) => {
 	return (
 
 		<div className={a.item}>
-			<div className={a.name}>User</div>
+			<div className={a.post}>
+			<Typography  variant="body1" gutterBottom>
+				{props.message}
+			</Typography>
+			</div>
+			<div>
 			<Avatar className={classes.avatar}>
         <AccountCircleIcon fontSize='large'/>
       </Avatar>
-			
-			<Typography variant="body1" gutterBottom>
-			<div className={a.message}>
-				{props.message}
 			</div>
-			</Typography>
 			<Divider variant="middle" />
 
 			<div>

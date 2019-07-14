@@ -16,12 +16,18 @@ import ProfileStatus from './ProfileStatus';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AccountCircleIcon from'@material-ui/icons/AccountCircle';
 import { teal } from '@material-ui/core/colors';
+import { indigo} from '@material-ui/core/colors';
+import { blueGrey} from '@material-ui/core/colors';
+
 
 const useStyles = makeStyles(theme => ({
 	card: {
 		maxWidth: 440,
 		marginLeft: 20,
 		marginTop: 10,
+		borderBlockColor: indigo[500],
+		// backgroundColor: blueGrey[50],
+		
 
 	},
 	media: {
