@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 	dense: {
 		marginTop: theme.spacing(2),
 	},
-
+	
 }));
 
 
@@ -65,6 +65,7 @@ const MyPosts = (props) => {
 const renderTextField = ({
 	input, 
 	type,
+
 }) => (
 		<TextField
 			id="outlined-with-placeholder"
@@ -73,8 +74,7 @@ const renderTextField = ({
 			margin="normal"
 			variant="outlined"
 			input {...input} 
-			type={type} 
-			
+			type={type}
 			
 			
 		/>)

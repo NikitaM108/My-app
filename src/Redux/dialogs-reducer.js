@@ -2,15 +2,13 @@ const SEND_MESSAGE = 'SEND_MESSAGE';
 
 let initialState = {
 	dialogs: [
-		{ id: 1, name: 'Misha' },
-		{ id: 2, name: 'Andrew' },
-		{ id: 3, name: 'grisha' }
+		{ id: 1, name: 'User first name' },
+		
 	],
 
 	messagesData: [
-		{ id: 1, message: 'Hello!' },
-		{ id: 2, message: 'Hello!' },
-		{ id: 3, message: 'Hello!' }
+		{ id: 1, message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet tincidunt dui, eu lobortis eros. Nullam non mauris auctor, sagittis ex vitae, varius odio. Nam maximus sed arcu a porttitor. Donec sollicitudin, dui sed faucibus aliquet, risus libero ultricies erat, quis pulvinar purus nulla non ex. ' },
+		
 	],
 	
 

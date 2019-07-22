@@ -4,6 +4,8 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import {Redirect} from 'react-router-dom';
 import {Field, reduxForm} from 'redux-form';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 
 
 
@@ -15,7 +17,7 @@ const Dialogs = (props) => {
 
 	let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />);
 	let messagesElements = state.messagesData.map(mess => <Message message={mess.message} key={mess.id}  id={mess.id} />);
-	let newMessageBody = state.newMessageBody;
+	// let newMessageBody = state.newMessageBody;
 	
 
 
@@ -26,7 +28,16 @@ const Dialogs = (props) => {
 	if(!props.isAuth ) return <Redirect to ={'/login'} />;
 
 	return (
-		<div className={s.dialogs}>
+		<div >
+			<div className={s.title}>
+			<Typography variant="h5" gutterBottom >
+				Conversation
+      </Typography>
+			
+			</div>
+			<Divider variant="fullwith" />
+		
+
 			<div className={s.dialogsItems}>
 				{dialogsElements}
 
