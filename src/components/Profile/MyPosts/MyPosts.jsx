@@ -20,14 +20,8 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 		flexWrap: 'wrap',
 	},
-	textField: {
-		marginLeft: theme.spacing(1),
-		marginRight: theme.spacing(1),
-		width: 400,
-		left: 10,
-	},
 	dense: {
-		marginTop: theme.spacing(2),
+		marginTop: theme.spacing(1),
 	},
 	
 }));
@@ -36,9 +30,10 @@ const useStyles = makeStyles(theme => ({
 
 
 const MyPosts = (props) => {
-	let classes = useStyles();
+	
+	let classes = useStyles()
 
-	let postsElements = props.postData.map(p => <Post message={p.message} id={p.id} likeCount={p.likeCount} />);
+	let postsElements = props.postData.map(p => <Post message={p.message} key={p.id} id={p.id} likeCount={p.likeCount} />);
 
 	let onAddPost = (values) => {
 		props.addPost(values.newPostText)
@@ -50,7 +45,7 @@ const MyPosts = (props) => {
 				My posts
       </Typography>
 		</div>
-		<Divider variant="fullwith" />
+		<Divider variant="fullWidth" />
 		<AddNewPostReduxForm onSubmit={onAddPost} />
 
 		<div>
@@ -65,17 +60,16 @@ const MyPosts = (props) => {
 const renderTextField = ({
 	input, 
 	type,
-
 }) => (
 		<TextField
 			id="outlined-with-placeholder"
 			label="Write a post"
-			placeholder="Placeholder"
+			placeholder="Write a post"
 			margin="normal"
 			variant="outlined"
-			input {...input} 
+			{...input} 
 			type={type}
-			
+			className={a.inputStyle}
 			
 		/>)
 
@@ -87,6 +81,7 @@ const AddNewPostForm = (props) => {
 		<form onSubmit={props.handleSubmit}>
 			<div className={a.textInput}>
 				<Field
+
 					component={renderTextField}
 					name="newPostText"
 					
@@ -94,7 +89,7 @@ const AddNewPostForm = (props) => {
 			</div>
 			
 			<div className={a.posts}>
-				<Button onClick={props.handleSubmit} variant="contained" color="primary">
+				<Button onClick={props.handleSubmit} variant="contained" color="primary" className={a.button}>
 					Add Post
 				</Button>
 			</div>

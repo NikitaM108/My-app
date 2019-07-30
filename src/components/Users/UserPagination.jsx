@@ -17,17 +17,8 @@ export default class UserPagination extends React.Component {
 		this.setState({ offset: offset });
 		this.props.onPageChanged(offset / this.props.pageSize + 1);
 	}	
-	// pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
-	// pages = [];
   render() {
-		// for (let i = 1; i <= this.pagesCount; i++) {
-		// 	this.pages.push(i);
-		// }
     return (
-			// {pages.map(p => {
-			// 	return <span className={props.currentPage === p && styles.selectedPage}
-			// 		 onClick={() => { props.onPageChanged(p) }}>{p}</span>
-			// })}
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
 				<Pagination 

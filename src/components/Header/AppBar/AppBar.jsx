@@ -4,9 +4,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import {NavLink} from 'react-router-dom';
+import style from '../Header.module.sass';
+import BlurOn from '@material-ui/icons/BlurOn'
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
     flexGrow: 1,
@@ -30,15 +32,16 @@ const AppBarComponent = (props) => {
     <div className={classes.root}>
       <AppBar position="fixed"  className={classes.appBar}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
+  
+            <BlurOn edge="start" className={classes.menuButton} />
+          
           <Typography variant="h6" className={classes.title}>
             My React App
           </Typography>
-          <Button color="inherit">{props.isAuth ? props.login :
-			<NavLink to={'/Login'} >Login</NavLink>}
-			</Button>
+          <Button onClick={props.logout} color="inherit"> {props.isAuth ? props.login :
+						<NavLink className={style.login} to={'/Login'} >Sing In, Please</NavLink>} 
+					</Button>
+					
         </Toolbar>
       </AppBar>
     </div>

@@ -96,7 +96,7 @@ class ProfileStatus extends React.Component {
 						<div>
 							<TextField
 								id="standard-read-only-input"
-								label="Change Status" defaultValue={this.props.status}
+								label="Change Status" 
 								className={this.classes.textField}
 								InputProps={{ readOnly: true, }}
 								value={this.props.status} />

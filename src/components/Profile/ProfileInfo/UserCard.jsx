@@ -18,6 +18,7 @@ import AccountCircleIcon from'@material-ui/icons/AccountCircle';
 import { teal } from '@material-ui/core/colors';
 import { indigo} from '@material-ui/core/colors';
 import { blueGrey} from '@material-ui/core/colors';
+import s from './ProfileInfo.module.sass'
 
 
 const useStyles = makeStyles(theme => ({
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	media: {
 		height: 0,
-		paddingTop: '56.25%',  //16:9
+		paddingTop: '40.25%',  //16:9
 	},
 	expand: {
 		transform: 'rotate(0deg)',
@@ -85,7 +86,7 @@ const UserCard = (props) => {
 			/>
 			<CardMedia
 				className={classes.media}
-				image={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}
+				image={props.profile.photos.large != null ? props.profile.photos.large : userPhoto }
 				
 			/>
 			<CardContent>

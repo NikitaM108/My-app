@@ -35,21 +35,21 @@ const ListLinks = (props) => {
 					</ListItemIcon>
 					Facebook
 				</ListItemLink>
-				<Divider variant="fullwith" />
+				<Divider variant="fullWidth" />
 				<ListItemLink href="https://www.instagram.com/">
 					<ListItemIcon>
 						<PublicIcon />
 					</ListItemIcon>
 					Instagram
 				</ListItemLink>
-				<Divider variant="fullwith" />
+				<Divider variant="fullWidth" />
 					<ListItemLink href="https://vk.com/">
 					<ListItemIcon>
 						<PublicIcon />
 					</ListItemIcon>
 					Vk
 				</ListItemLink>
-				<Divider variant="fullwith" />
+				<Divider variant="fullWidth" />
 			</List>
 
 		</div>

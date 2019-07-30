@@ -1,12 +1,22 @@
 import React from 'react';
 import s from './../Dialogs.module.sass';
+import Typography from '@material-ui/core/Typography';
+
+
+
+
 
 
 
 
 
 const Message = (props) => {
-	return <div className={s.dialog}>{props.message}</div>
+
+
+	return <Typography component={"span"} variant="body1" gutterBottom>
+		{props.message}
+	</Typography>
+		
 }
 
 

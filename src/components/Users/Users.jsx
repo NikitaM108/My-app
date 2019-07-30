@@ -15,7 +15,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%',
-		maxWidth: 1000,
+		maxWidth: "fullWith",
 		backgroundColor: theme.palette.background.paper,
 	},
 	pos: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 		padding: 10,
 	},
 	button: {
-		margin: theme.spacing(1),
+		margin: theme.spacing(1)
 	},
 
 }));
@@ -35,11 +35,11 @@ let Users = (props) => {
 	const classes = useStyles();
 
 
-	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-	let pages = [];
-	for (let i = 1; i <= pagesCount; i++) {
-		pages.push(i);
-	}
+	// let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+	// let pages = [];
+	// for (let i = 1; i <= pagesCount; i++) {
+	// 	pages.push(i);
+	// }
 	return <div>
 		<div className={styles.title}>
 			<Typography variant="h5" gutterBottom >
@@ -52,7 +52,7 @@ let Users = (props) => {
 				pageSize={props.pageSize}
 				currentPage={props.currentPage} />
 		</div>
-		<Divider variant="fullwith" />
+		<Divider variant="fullWidth" />
 
 
 		{/* <div>
@@ -70,7 +70,7 @@ let Users = (props) => {
 							<ListItem button>
 								<img src={users.photos.small != null ? users.photos.small : userPhoto} alt="photo"
 									className={styles.avatar} />
-								<Typography variant="body1" gutterBottom>
+								<Typography component={"span"} variant="body1" gutterBottom>
 									<ListItemText primary={users.name} secondary={users.status} className={classes.nickPos} />
 								</Typography>
 							</ListItem>
@@ -96,21 +96,9 @@ let Users = (props) => {
 						</ListItemSecondaryAction>
 
 					</List>
-					<Divider variant="fullwith" />
+					<Divider variant="fullWidth" />
 
 				</div>
-
-				{/* <div>
-						{users.followed
-							? <button disabled={props.followingInProgress.some(id => id === users.id)} 
-								onClick={() => {
-								props.unfollow( users.id)}}>
-									Unfollow</button>
-							: <button disabled={props.followingInProgress.some(id => id === users.id)} onClick={() => {
-								props.follow(users.id)}}>
-								Follow</button>}
-					</div>  */}
-
 
 
 			</div>)
