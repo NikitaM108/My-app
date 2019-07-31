@@ -3,7 +3,6 @@ import s from './Dialogs.module.sass';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import { Redirect } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Avatar from '@material-ui/core/Avatar';
@@ -45,13 +44,17 @@ const Dialogs = (props) => {
 	let secondDialogsElements = state.secondUser.map(secondUser => <DialogItem name={secondUser.name} key={secondUser.id} id={secondUser.id} />);
 	let messagesElements = state.messagesData.map(mess => <Message message={mess.message} key={mess.id} id={mess.id} />);
 	let secondMessagesData = state.secondMessagesData.map(secondMessagesData => <Message message={secondMessagesData.message} key={secondMessagesData.id} id={secondMessagesData.id} />);
+	let newMessageBody = state.newMessageBody;
 
+	let onSendMessageClick = () =>{
+		props.sendMessage();
 
-
-
-	let addNewMessage = (values) => {
-		props.sendMessage(values.newMessageBody);
 	}
+	let onNewMessageChange = (e) =>{
+		let body = e.target.value;
+		props.updateNewMessageBody(body);
+	}
+	
 
 	if (!props.isAuth) return <Redirect to={'/login'} />;
 
@@ -117,51 +120,34 @@ const Dialogs = (props) => {
 			</div>
 			<Divider variant="fullWidth" />
 
+			<div className={s.inputPos}>
+			<TextField
+        id="standard-full-width"
+        label="Please,"
+        style={{ margin: 8 }}
+        helperText=" to another user"
+        margin="normal"
+        InputLabelProps={{
+          shrink: true,
+				}}
+				rows={2}
+				placeholder="Write message"
+				className = {s.input}
+				value = {newMessageBody}
+				onChange = {onNewMessageChange} 
+      />
+			</div>
 
+			<div className={s.buttonPos}>
+					<Button onClick={onSendMessageClick} variant="outlined" color="primary" className={s.button} >
+						Send
+      	</Button>
+				</div>
 
-
-
-			<AddMessageReduxForm onSubmit={addNewMessage} />
 		</div>
 
 	)
 
 }
 
-const renderTextField = ({
-	input,
-	label,
-}) => (
-		<TextField
-			placeholder="Write a message"
-			{...input}
-			className={s.input}
-
-		/>
-	)
-
-const AddMessageForm = (props) => {
-	return (
-		<form onSubmit={props.handleSubmit}>
-			<div>
-				<div className={s.inputPos}>
-					<Field
-						name="newMessageBody"
-						component={renderTextField}
-						label="Notes"
-						multiLine={true}
-						rows={2}
-						placeholder="Write message" />
-				</div>
-				<div className={s.buttonPos}>
-					<Button onClick={props.handleSubmit} variant="outlined" color="primary" className={s.button} >
-						Send
-      	</Button>
-				</div>
-
-			</div>
-		</form>
-	)
-}
-const AddMessageReduxForm = reduxForm({ form: "dialogAddMessageForm" })(AddMessageForm)
 export default Dialogs;

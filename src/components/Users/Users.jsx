@@ -68,7 +68,7 @@ let Users = (props) => {
 					<List component="nav">
 						<NavLink to={'/profile/' + users.id} className={styles.nickNames}>
 							<ListItem button>
-								<img src={users.photos.small != null ? users.photos.small : userPhoto} alt="photo"
+								<img src={users.photos.small != null ? users.photos.small : userPhoto} alt="avatar"
 									className={styles.avatar} />
 								<Typography component={"span"} variant="body1" gutterBottom>
 									<ListItemText primary={users.name} secondary={users.status} className={classes.nickPos} />

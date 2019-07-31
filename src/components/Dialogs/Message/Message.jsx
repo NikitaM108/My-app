@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './../Dialogs.module.sass';
 import Typography from '@material-ui/core/Typography';
 
 
