@@ -4,8 +4,16 @@ const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 
 let initialState = {
 	dialogs: [
-		{ id: 1, name: 'User first name' },
-		
+		{ 
+			name: 'User second name',
+			msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis nunc nec enim facilisis tempus. Nulla facilisi.',
+			isMe: false
+		},
+		{ 
+			name: 'User first name',
+			msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis nunc nec enim facilisis tempus. Nulla facilisi. Nunc lacinia, odio at pharetra dignissim, lorem dolor auctor ante, eu interdum nisl sem in est. In at venenatis metus, eget pellentesque ex. Aenean arcu quam, sodales nec bibendum varius, condimentum ut ligula.',
+			isMe: true
+		}
 	],
 	secondUser:[
 		{id: 1, name: 'User second name'}
@@ -15,9 +23,7 @@ let initialState = {
 		{ id: 1, message: ' ' },
 		
 	],
-	secondMessagesData:[
-		{id: 1, message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet tincidunt dui, eu lobortis eros. Nullam non mauris auctor, sagittis ex vitae, varius odio. Nam maximus sed arcu a porttitor. Donec sollicitudin, dui sed faucibus aliquet, risus libero ultricies erat, quis pulvinar purus nulla non ex. ' },
-	],
+	
 
 	newMessageBody: "",
 
@@ -42,7 +48,7 @@ const dialogsReducer = (state = initialState, action) => {
 		case UPDATE_NEW_MESSAGE_BODY:
 				return {
 					...state,
-					newMessageBody: action.body
+					dialogs: [...state.dialogs, action.body]
 					
 				};
 	
