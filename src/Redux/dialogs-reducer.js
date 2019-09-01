@@ -15,10 +15,7 @@ let initialState = {
 			isMe: true
 		}
 	],
-	secondUser:[
-		{id: 1, name: 'User second name'}
-	],
-
+	
 	messagesData: [
 		{ id: 1, message: ' ' },
 		

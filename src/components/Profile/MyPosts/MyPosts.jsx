@@ -12,10 +12,7 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-const MyPosts = (props) => {
-	
-	
-
+const MyPosts = React.memo((props) => {
 	let postsElements = props.postData.map(p => <Post message={p.message} key={p.id} id={p.id} likeCount={p.likeCount} />);
 	
 	let newPostsElement = React.createRef();
@@ -63,7 +60,7 @@ const MyPosts = (props) => {
 		</div>
 	</div>
 
-}
+})
 
 
 export default MyPosts;

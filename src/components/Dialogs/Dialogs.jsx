@@ -20,7 +20,7 @@ class Dialogs extends React.Component {
 	}
 
 	
-	onSendMessageClick = (e) =>{
+	onSendMessageClick = () =>{
 		this.props.sendMessage(this.state.newMessageBody);
 		this.setState({newMessageBody: ''});
 	}

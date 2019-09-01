@@ -40,7 +40,7 @@ let Users = (props) => {
 	// for (let i = 1; i <= pagesCount; i++) {
 	// 	pages.push(i);
 	// }
-	return <div>
+	return <div className="head">
 		<div className={styles.title}>
 			<Typography variant="h5" gutterBottom >
 				The list of users
