@@ -23,10 +23,9 @@ import { indigo} from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
 	card: {
-		maxWidth: 440,
-		marginLeft: 20,
-		marginTop: 10,
+		width: '50%',
 		borderBlockColor: indigo[500],
+		margin: 16
 	
 		
 

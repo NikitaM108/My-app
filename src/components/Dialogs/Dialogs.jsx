@@ -35,7 +35,7 @@ class Dialogs extends React.Component {
 		return (
 			<div >
 				<div className={s.title}>
-					<Typography variant="h5" gutterBottom >
+					<Typography variant="h3" gutterBottom >
 						Conversation
 				</Typography>
 				</div>
@@ -49,7 +49,7 @@ class Dialogs extends React.Component {
 				<TextField
 					id="standard-full-width"
 					label="Please,"
-					style={{ margin: 8 }}
+					style={{ margin: 2}}
 					helperText=" to another user"
 					margin="normal"
 					InputLabelProps={{

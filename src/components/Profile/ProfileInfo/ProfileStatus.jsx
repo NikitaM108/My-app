@@ -6,7 +6,7 @@ import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
 import clsx from 'clsx';
 import SaveIcon from '@material-ui/icons/Save';
-import s from "./ProfileInfo.module.sass";
+import style from "./ProfileInfo.module.sass";
 
 const useStyles = makeStyles(theme => ({
 	margin: {
@@ -93,14 +93,14 @@ class ProfileStatus extends React.Component {
 			<div>
 				{!this.state.editMode &&
 					<div>
-						<div>
+						<div className={style.StatusSection}>
 							<TextField
 								id="standard-read-only-input"
 								label="Change Status" 
 								className={this.classes.textField}
 								InputProps={{ readOnly: true, }}
 								value={this.props.status} />
-							<Fab size="small" color="primary" aria-label="Edit" className={s.button}
+							<Fab size="small" color="primary" aria-label="Edit" className={style.button}
 								onClick={this.activateEditMode} >
 								<Icon>edit_icon</Icon>
 							</Fab>

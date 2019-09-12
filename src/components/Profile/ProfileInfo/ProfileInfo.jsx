@@ -1,5 +1,5 @@
 import React from 'react';
-import a from './ProfileInfo.module.sass';
+import style from './ProfileInfo.module.sass';
 import Preloader from '../../common/Preloader';
 import Typography from '@material-ui/core/Typography';
 import UserCard from './UserCard';
@@ -15,18 +15,16 @@ const ProfileInfo = (props) => {
 	}
 
 	return (
-		<div >
-			<div className={a.title}>
-				<Typography variant="h5" gutterBottom >
-				Profile
+		<div className={style.MainContainer}>
+			<div className={style.Title}>
+				<Typography variant="h3" gutterBottom >
+					Profile
       </Typography>
 			</div>
-			
-			<UserCard profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
-			<div className={a.descriptionBlock}>
+			<div className={style.ContentContainer}>
+				<UserCard profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
 				<ContactsCard />
 			</div>
-
 		</div>
 	)
 };

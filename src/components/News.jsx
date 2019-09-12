@@ -6,7 +6,7 @@ import s from './Coming.module.sass'
 const News = () => {
 	return <div>
 		<div className={s.title}>
-					<Typography variant="h5" gutterBottom >
+					<Typography variant="h3" gutterBottom >
 					Coming Soon
 				</Typography>
 				</div>

@@ -10,7 +10,6 @@ import PublicIcon from '@material-ui/icons/Public';
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%',
-		maxWidth: 360,
 		backgroundColor: theme.palette.background.paper,
 	},
 	link: {

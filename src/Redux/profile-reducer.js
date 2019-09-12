@@ -66,32 +66,28 @@ export const setStatus = (status) => ({ type: SET_STATUS, status })
 export const updateNewPostTextActionCreator = (text) => ({type:UPDATE_NEW_POST_TEXT, newText: text})
 
 
-export const getUserProfile = (userId) => (dispatch) => {
+export const getUserProfile = (userId) => async  (dispatch) => {
 
-	usersAPI.getProfile(userId)
-		.then(response => {
+	let response = await usersAPI.getProfile(userId)
+		
 			dispatch(setUserProfile(response.data));
-		});
+		
 
 }
 
-export const getStatus = (userId) => (dispatch) => {
+export const getStatus = (userId) => async (dispatch) => {
 
-	profileAPI.getStatus(userId)
-		.then(response => {
+	let response = await profileAPI.getStatus(userId)
 			dispatch(setStatus(response.data));
-		});
-
 }
 
-export const updateStatus = (status) => (dispatch) => {
+export const updateStatus = (status) => async (dispatch) => {
 
-	profileAPI.updateStatus(status)
-		.then(response => {
+	let response = await profileAPI.updateStatus(status)
+		
 			 if (response.data.resultCode === 0)	{
 				dispatch(setStatus(status));
 			 }
-		});
 
 }
 

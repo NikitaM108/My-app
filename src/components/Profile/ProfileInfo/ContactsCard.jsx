@@ -11,10 +11,8 @@ import ListLinks from './List';
 
 const useStyles = makeStyles(theme => ({
   card: {
-		width: 453,
-
-		
-		
+		width: '50%',
+		margin: 16
   },
   media: {
     height: 0,
